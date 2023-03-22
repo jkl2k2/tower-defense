@@ -2,10 +2,18 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class BuildManager : MonoBehaviour
 {
     public static BuildManager instance;
+
+    public GameObject standardTurretPrefab;
+    [FormerlySerializedAs("anotherTurretPrefab")] public GameObject missileLauncherPrefab;
+
+    private TurretBlueprint turretToBuild;
+    
+    public bool CanBuild => turretToBuild != null;
 
     private void Awake()
     {
@@ -17,17 +25,14 @@ public class BuildManager : MonoBehaviour
         instance = this;
     }
 
-    public GameObject standardTurretPrefab;
-
-    private void Start()
+    public void BuildTurretOn(Node node)
     {
-        turretToBuild = standardTurretPrefab;
+        GameObject turret = Instantiate(turretToBuild.prefab, node.GetBuildPosition(), Quaternion.identity);
+        node.turret = turret;
     }
-
-    private GameObject turretToBuild;
-
-    public GameObject GetTurretToBuild()
+    
+    public void SelectTurretToBuild(TurretBlueprint turret)
     {
-        return turretToBuild;
+        turretToBuild = turret;
     }
 }

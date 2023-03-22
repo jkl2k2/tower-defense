@@ -10377,6 +10377,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7140578279637287496, guid: d1b37a95ef627be46a339837bd65356d, type: 3}
   m_PrefabInstance: {fileID: 1434644643}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1450676656 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6075713007998550311, guid: 75f383ce9f063884c90f2866fc939619, type: 3}
+  m_PrefabInstance: {fileID: 9121819943535161553}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1460247632
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13446,9 +13451,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f5d1a12ff24495469ac276f99065c37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
   range: 15
+  fireRate: 1
   enemyTag: Enemy
+  partToRotate: {fileID: 1450676656}
+  turnSpeed: 10
+  bulletPrefab: {fileID: 3612131271397774359, guid: 9927537c1a516904dbe16ff2575f5d83, type: 3}
+  firePoint: {fileID: 9121819943535161554}
 --- !u!1001 &1890740589
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16437,3 +16446,8 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1881750911}
   m_SourcePrefab: {fileID: 100100000, guid: 75f383ce9f063884c90f2866fc939619, type: 3}
+--- !u!4 &9121819943535161554 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1953166153182499905, guid: 75f383ce9f063884c90f2866fc939619, type: 3}
+  m_PrefabInstance: {fileID: 9121819943535161553}
+  m_PrefabAsset: {fileID: 0}

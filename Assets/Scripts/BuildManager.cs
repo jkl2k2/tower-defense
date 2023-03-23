@@ -8,8 +8,6 @@ public class BuildManager : MonoBehaviour
 {
     public static BuildManager instance;
 
-    [FormerlySerializedAs("anotherTurretPrefab")] public GameObject missileLauncherPrefab;
-
     private TurretBlueprint turretToBuild;
     
     public GameObject buildEffect;

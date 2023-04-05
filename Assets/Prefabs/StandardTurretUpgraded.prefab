@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3593358728978462652}
   - component: {fileID: 1881750911}
   m_Layer: 0
-  m_Name: Turret
+  m_Name: StandardTurretUpgraded
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26,14 +26,14 @@ Transform:
   m_GameObject: {fileID: 4221557393491700998}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6075713007998550311}
   - {fileID: 852011072472096099}
   - {fileID: 1953166153182499905}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1881750911
 MonoBehaviour:
@@ -48,11 +48,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 15
-  fireRate: 1
+  bulletPrefab: {fileID: 3612131271397774359, guid: a19e61874b279064ba95e0d3bb2c3728, type: 3}
+  fireRate: 1.5
+  useLaser: 0
+  damageOverTime: 30
+  slowPct: 0.5
+  lineRenderer: {fileID: 0}
+  impactEffect: {fileID: 0}
+  impactLight: {fileID: 0}
   enemyTag: Enemy
   partToRotate: {fileID: 6075713007998550311}
   turnSpeed: 10
-  bulletPrefab: {fileID: 3612131271397774359, guid: 9927537c1a516904dbe16ff2575f5d83, type: 3}
   firePoint: {fileID: 1953166153182499905}
 --- !u!1 &4278544768234205713
 GameObject:
@@ -115,9 +121,9 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6709065d4bb33ba42829b7de4443ab86, type: 2}
-  - {fileID: 2100000, guid: 16c50a52b2001ca40b3765e2c31d9f9a, type: 2}
-  - {fileID: 2100000, guid: 443445eb7c98f45428377772644a4dea, type: 2}
+  - {fileID: 2100000, guid: 16c905f269b90ee43b5f253e5926a565, type: 2}
+  - {fileID: 2100000, guid: c3d7049411666814d8cc2633e3f6a06b, type: 2}
+  - {fileID: 2100000, guid: 4d2a621afaa3e8943929284221aa3369, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

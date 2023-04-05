@@ -7,16 +7,10 @@ using UnityEngine.SceneManagement;
 
 public class GameOver : MonoBehaviour
 {
-    public TextMeshProUGUI roundsText;
 
     public SceneFader sceneFader;
 
     public string menuSceneName = "MainMenu";
-    
-    private void Awake()
-    {
-        roundsText.SetText(PlayerStats.Rounds.ToString());
-    }
 
     public void Retry()
     {

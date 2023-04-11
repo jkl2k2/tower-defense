@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Enemy : MonoBehaviour
 {
     public float startSpeed = 10f;
+    public float startRotationSpeed = 8f;
     [HideInInspector]
     public float speed = 10f;
     

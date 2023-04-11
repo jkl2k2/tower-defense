@@ -1,46 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 [RequireComponent(typeof(Enemy))]
 public class EnemyMovement : MonoBehaviour
 {
-    private Transform target;
-    private int waypointIndex = 0;
-
     private Enemy enemy;
+
+    public NavMeshAgent agent;
+
+    public GameObject destination;
 
     private void Start()
     {
         enemy = GetComponent<Enemy>();
+
+        destination = GameObject.FindWithTag("Finish");
         
-        target = Waypoints.points[0];
+        agent.speed = enemy.startSpeed;
+        agent.acceleration = enemy.startRotationSpeed;
     }
     
     private void Update()
     {
-        Vector3 dir = target.position - transform.position;
-        transform.Translate(dir.normalized * enemy.speed * Time.deltaTime, Space.World);
-
-        if (Vector3.Distance(transform.position, target.position) <= 0.2f)
-        {
-            GetNextWaypoint();
-        }
-
-        enemy.speed = enemy.startSpeed;
-    }
-    
-    void GetNextWaypoint()
-    {
-        if (waypointIndex >= Waypoints.points.Length - 1)
+        agent.SetDestination(destination.transform.position);
+        
+        if (Vector3.Distance(transform.position, destination.transform.position) <= 1f)
         {
             EndPath();
-            Destroy(gameObject);
-            return;
         }
-            
-        waypointIndex++;
-        target = Waypoints.points[waypointIndex];
     }
 
     void EndPath()
